@@ -1,0 +1,36 @@
+application: shawspringpartners
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+# https://developers.google.com/appengine/docs/python/config/appconfig#Static_File_Handlers
+
+handlers:
+
+- url: /
+  static_files: static/index.html
+  upload: static/index.html
+
+- url: /css
+  static_dir: static/css
+
+- url: /fonts
+  static_dir: static/fonts
+
+- url: /js
+  static_dir: static/js
+
+- url: /images
+  static_dir: static/images
+
+- url: /(.*\.(htm|html))
+  static_files: static/\1
+  upload: static/(.*\.(htm|html))
+
+- url: /py/.*
+  script: main.app
+
+- url: /admin
+  script: main.app
+  login: admin

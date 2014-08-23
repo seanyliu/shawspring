@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>ShawSpring Partners LLC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+
+var _bgArray = [
+  "images/bg-asia.png",
+  "images/bg-ba.png",
+  "images/bg-baseball.png",
+  "images/bg-bj.png",
+  "images/bg-boston.png",
+  "images/bg-hk.png",
+  "images/bg-ny.png",
+  "images/bg-oc.png",
+  "images/bg-ocean.png",
+  "images/bg-trees.png",
+  "images/bg-vegas.png"
+];
+var _bgIdx = Math.floor(Math.random() * _bgArray.length);
+var _transitionsAdded = false;
+
+$(window).load(function() {
+
+  // load a random bg image
+  $("#home").css("background", "url('"+_bgArray[_bgIdx]+"')");
+  $("#home").css("background-size", "cover");
+
+  setInterval(function() {
+    if (!_transitionsAdded) {
+      _transitionsAdded = true;
+      $("#home").css("transition", "background 1s ease-in-out");
+      $("#home").css("-moz-transition", "background 1s ease-in-out");
+      $("#home").css("-webkit-transition", "background 1s ease-in-out");
+    }
+    _bgIdx = (_bgIdx + 1) % _bgArray.length;
+    $("#home").css("background", "url('"+_bgArray[_bgIdx]+"')");
+    $("#home").css("background-size", "cover");
+  }, 5000);
+
+
+  // preload background images
+  for (var idx=0; idx<_bgArray.length; idx++) {
+    var img = new Image();
+    img.src = _bgArray[idx];
+  }
+
+  // toggle the disclosure
+  $("#disclosure-toggle").click(function() {
+    $("#disclosure").toggle();
+  });
+  
+});
+
+
+</script>
+<link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<style type="text/css">
+
+html, body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.navbar {
+  background-color: #000;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 0px;
+}
+
+.navbar .navbar-text {
+  font-size: 13px;
+  color: #FFF;
+}
+
+.navbar-brand {
+  text-indent: -9999px;
+  background-image: url('images/logo-white-full.png');
+  background-repeat: no-repeat;
+  background-position: left center; 
+  margin-top: -3px;
+  width: 246px;
+}
+
+#home {
+  background: url('images/bg-asia.png');
+  background-size: cover;
+  height: 500px;
+  color: #FFF;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes carousel {
+  0% {
+    background: url('images/bg-asia.png');
+    background-size: cover;
+  }
+  1% {
+    background: url('images/bg-asia.png');
+    background-size: cover;
+  }
+  8% {
+    background: url('images/bg-asia.png');
+    background-size: cover;
+  }
+  9% {
+    background: url('images/bg-ba.png');
+    background-size: cover;
+  }
+  10% {
+    background: url('images/bg-ba.png');
+    background-size: cover;
+  }
+  17% {
+    background: url('images/bg-ba.png');
+    background-size: cover;
+  }
+  18% {
+    background: url('images/bg-trees.png');
+    background-size: cover;
+  }
+  19% {
+    background: url('images/bg-trees.png');
+    background-size: cover;
+  }
+  26% {
+    background: url('images/bg-trees.png');
+    background-size: cover;
+  }
+  27% {
+    background: url('images/bg-oc.png');
+    background-size: cover;
+  }
+  28% {
+    background: url('images/bg-oc.png');
+    background-size: cover;
+  }
+  35% {
+    background: url('images/bg-oc.png');
+    background-size: cover;
+  }
+  36% {
+    background: url('images/bg-baseball.png');
+    background-size: cover;
+  }
+  37% {
+    background: url('images/bg-baseball.png');
+    background-size: cover;
+  }
+  44% {
+    background: url('images/bg-baseball.png');
+    background-size: cover;
+  }
+  45% {
+    background: url('images/bg-bj.png');
+    background-size: cover;
+  }
+  46% {
+    background: url('images/bg-bj.png');
+    background-size: cover;
+  }
+  53% {
+    background: url('images/bg-bj.png');
+    background-size: cover;
+  }
+  54% {
+    background: url('images/bg-boston.png');
+    background-size: cover;
+  }
+  55% {
+    background: url('images/bg-boston.png');
+    background-size: cover;
+  }
+  62% {
+    background: url('images/bg-boston.png');
+    background-size: cover;
+  }
+  63% {
+    background: url('images/bg-ny.png');
+    background-size: cover;
+  }
+  64% {
+    background: url('images/bg-ny.png');
+    background-size: cover;
+  }
+  71% {
+    background: url('images/bg-ny.png');
+    background-size: cover;
+  }
+  72% {
+    background: url('images/bg-ocean.png');
+    background-size: cover;
+  }
+  73% {
+    background: url('images/bg-ocean.png');
+    background-size: cover;
+  }
+  80% {
+    background: url('images/bg-ocean.png');
+    background-size: cover;
+  }
+  81% {
+    background: url('images/bg-vegas.png');
+    background-size: cover;
+  }
+  82% {
+    background: url('images/bg-vegas.png');
+    background-size: cover;
+  }
+  89% {
+    background: url('images/bg-vegas.png');
+    background-size: cover;
+  }
+  90% {
+    background: url('images/bg-hk.png');
+    background-size: cover;
+  }
+  91% {
+    background: url('images/bg-hk.png');
+    background-size: cover;
+  }
+  99% {
+    background: url('images/bg-hk.png');
+    background-size: cover;
+  }
+}
+
+#slogan {
+  padding-top: 180px;
+}
+
+#slogan h1, h2 {
+  text-shadow: 0px 3px 5px #000;
+}
+
+#slogan h1 {
+  font-size: 31px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 0px;
+  line-height: 1.1;
+}
+
+#slogan h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 10px 0px 25px 0px;
+  line-height: 1.1;
+}
+
+#slogan p {
+  width: 50%;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0px 0px 20px 0px;
+}
+
+#slogan .btn {
+  margin-top: 20px;
+}
+
+.btn {
+  font-weight: 500;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  padding: 10px 50px;
+}
+
+#footer {
+  font-size: 13px;
+  padding-top: 20px;
+  color: #000;
+}
+
+#footer ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#disclosure-wrapper {
+}
+
+#disclosure {
+  display: none;
+}
+
+#footer a {
+  color: #000;
+}
+
+#footer li {
+  display: inline;
+  padding-right: 15px;
+}
+
+@media (max-width: 600px) {
+  #home {
+    height: 550px;
+  }
+
+  #slogan {
+    position: relative;
+    padding-top: 70px;
+    top: 0px;
+    left: 0px;
+    width: 90%;
+    margin: 0px auto;
+    text-align: center;
+  }
+
+  #slogan p {
+    width: 100%;
+  }
+
+  div#ss-iphone div {
+    background-position: center top;
+    margin-top: 50px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
+    <a class="navbar-brand" href="#">ShawSpring Partners LLC</a>
+  </div>
+</nav>
+
+<section id="home" data-speed="4" data-type="background">
+  <div class="container">
+    <div class="row">
+      <div id="slogan">
+        <h1>A concentrated value approach</h1>
+        <h2>to public markets investing</h2>
+        <!--<a href="#" class="btn btn-success">Client Login</a>-->
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container" id="footer">
+  <div class="row" id="disclosure-wrapper">
+    <p id="disclosure">ShawSpring Partners and its managed funds are not open for investment by members of the public.  No offer of interests in such funds is being made or should be inferred.</p>
+  </div>
+  <div class="row">
+    <ul class="navbar-left">
+      <li><a href="https://portal.krfs.com/login">Client Login</a></li>
+      <li id="disclosure-toggle"><a href="#">Disclosure</a></li>
+      <li><a href="mailto:info@shawspring.com">Contact Us</a></li>
+    </ul>
+    <p class="navbar-right">1 International Place, Suite 2400 &nbsp; &nbsp; Boston, MA 02110</p>
+  </div>
+</div>
+
+</body>
+</html>
